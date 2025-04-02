@@ -2,8 +2,8 @@ project "Glad"
     kind "StaticLib"
     language "C"
     location "%{wks.location}/build"
-    targetdir "%{wks.location}/bin/%{cfg.buildcfg}"
-    objdir "%{wks.location}/bin-int/%{cfg.buildcfg}"
+    targetdir "%{wks.location}/bin/%{cfg.buildcfg}/%{prj.name}"
+    objdir "%{wks.location}/bin-int/%{cfg.buildcfg}/%{prj.name}"
     staticruntime "On"
 
     files {
@@ -22,6 +22,7 @@ project "Glad"
         defines { "PLATFORM_LINUX" }
 
     filter "system:macosx"
+        systemversion "15.0" -- Replace with your macOS version
         defines { "PLATFORM_MAC" }
 
     filter "configurations:Debug"
