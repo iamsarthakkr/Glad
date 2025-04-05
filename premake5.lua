@@ -1,10 +1,10 @@
 project "Glad"
-    kind "StaticLib"
     language "C"
-    location "%{wks.location}/build"
-    targetdir "%{wks.location}/bin/%{cfg.buildcfg}/%{prj.name}"
-    objdir "%{wks.location}/bin-int/%{cfg.buildcfg}/%{prj.name}"
+    kind "StaticLib"
     staticruntime "On"
+
+    targetdir "lib"
+    objdir "lib/int"
 
     files {
         "include/**.h",
